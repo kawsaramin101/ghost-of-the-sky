@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<style>html,body{margin:0;height:100%;background:linear-gradient(#2B0F5C,#1B0B45);overflow:hidden;touch-action:none}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
+</head>
+<body>
+<script type="module">
+import * as THREE from 'three';
+
+const R = 1, DEFAULT_Z = 3.2;
+
+// ---- Bridge to Flutter (queues until flutter_inappwebview is ready) ----
+const queue = [];
+const ready = () => window.flutter_inappwebview && window.flutter_inappwebview.callHandler;
+function send(name, ...args) {
+  if (ready()) window.flutter_inappwebview.callHandler(name, ...args);
+  else queue.push([name, args]);
+}
+const flush = () => { if (ready()) queue.splice(0).forEach(([n, a]) => window.flutter_inappwebview.callHandler(n, ...a)); };
+window.addEventListener('flutterInAppWebViewPlatformReady', flush);
+const poll = setInterval(() => { if (ready()) { clearInterval(poll); flush(); } }, 100);
+
+// ---- Scene ----
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 100);
+camera.position.z = DEFAULT_Z;
+scene.add(new THREE.AmbientLight(0xffffff, 0.35));
+const sun = new THREE.DirectionalLight(0xffffff, 2.5); sun.position.set(5, 2, 4); scene.add(sun);
+
+const starPos = new Float32Array(1800 * 3);
+for (let i = 0; i < starPos.length; i += 3) {
+  const v = new THREE.Vector3().randomDirection().multiplyScalar(40);
+  starPos.set([v.x, v.y, v.z], i);
+}
+const starGeo = new THREE.BufferGeometry();
+starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+scene.add(new THREE.Points(starGeo, new THREE.PointsMaterial({ color: 0xffffff, size: 0.08 })));
+
+// lat/lon (deg, east positive) -> point on an equirectangular-mapped THREE.SphereGeometry
+const toVec = (lat, lon, r = R) => {
+  const a = lat * Math.PI / 180, b = lon * Math.PI / 180;
+  return new THREE.Vector3(r * Math.cos(a) * Math.cos(b), r * Math.sin(a), -r * Math.cos(a) * Math.sin(b));
+};
+
+const moon = new THREE.Group(); scene.add(moon);   // the "world" group (Moon or Mars)
+const planet = new THREE.Mesh(new THREE.SphereGeometry(R, 64, 64), new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 1 }));
+moon.add(planet);
+
+// ---- Markers (rebuilt for each body) ----
+const markers = {}, hits = []; let markerObjs = [];
+function rebuildMarkers(sites) {
+  markerObjs.forEach((o) => moon.remove(o)); markerObjs = []; hits.length = 0;
+  for (const k in markers) delete markers[k];
+  for (const s of sites) {
+    const dir = toVec(s.lat, s.lon).normalize();
+    const dot = new THREE.Mesh(new THREE.SphereGeometry(0.025, 16, 16), new THREE.MeshBasicMaterial({ color: 0xffa500 }));
+    dot.position.copy(dir.clone().multiplyScalar(R * 1.01));
+    const hit = new THREE.Mesh(new THREE.SphereGeometry(0.1, 8, 8), new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false }));
+    hit.position.copy(dot.position); hit.userData.id = s.id;
+    moon.add(dot, hit); markerObjs.push(dot, hit); hits.push(hit); markers[s.id] = { dir, dot };
+  }
+}
+const select = (id) => { for (const k in markers) markers[k].dot.material.color.set(k === id ? 0x00ffcc : 0xffa500); };
+
+// ---- Textures: Moon from file; Mars from file if present, else a generated placeholder ----
+const loader = new THREE.TextureLoader();
+const load = (url) => new Promise((ok, fail) => loader.load(url, ok, undefined, fail));
+const texCache = {};
+function hash3(x, y, z) { let h = Math.imul(x, 374761393) ^ Math.imul(y, 668265263) ^ Math.imul(z, 1274126177); h = Math.imul(h ^ (h >>> 13), 1274126177); return ((h ^ (h >>> 16)) >>> 0) / 4294967295; }
+function vnoise(x, y, z) {
+  const xi = Math.floor(x), yi = Math.floor(y), zi = Math.floor(z), xf = x - xi, yf = y - yi, zf = z - zi;
+  const u = xf * xf * (3 - 2 * xf), v = yf * yf * (3 - 2 * yf), w = zf * zf * (3 - 2 * zf), L = (a, b, t) => a + (b - a) * t;
+  return L(L(L(hash3(xi, yi, zi), hash3(xi + 1, yi, zi), u), L(hash3(xi, yi + 1, zi), hash3(xi + 1, yi + 1, zi), u), v),
+           L(L(hash3(xi, yi, zi + 1), hash3(xi + 1, yi, zi + 1), u), L(hash3(xi, yi + 1, zi + 1), hash3(xi + 1, yi + 1, zi + 1), u), v), w);
+}
+function proceduralMars() { // placeholder only: drop a NASA map at assets/web/textures/mars_2k.jpg to replace it
+  const W = 768, H = 384, c = document.createElement('canvas'); c.width = W; c.height = H;
+  const g = c.getContext('2d'), img = g.createImageData(W, H);
+  for (let j = 0; j < H; j++) {
+    const lat = (0.5 - j / H) * Math.PI, cy = Math.sin(lat), cr = Math.cos(lat);
+    for (let i = 0; i < W; i++) {
+      const lon = (i / W - 0.5) * 2 * Math.PI, x = cr * Math.cos(lon), z = -cr * Math.sin(lon);
+      let n = 0, a = 0.5, f = 2.2;
+      for (let o = 0; o < 4; o++) { n += a * vnoise(x * f + 11, cy * f + 7, z * f + 3); a *= 0.5; f *= 2.1; }
+      n = Math.min(1, Math.max(0, (n - 0.2) / 0.6));
+      const dk = n < 0.45 ? (0.45 - n) / 0.45 : 0;
+      let r = 190 - 80 * dk + 40 * n, gg = 95 - 45 * dk + 25 * n, b = 60 - 30 * dk + 15 * n;
+      if (Math.abs(lat) > 1.35) { const t = Math.min(1, (Math.abs(lat) - 1.35) / 0.1); r += (245 - r) * t; gg += (240 - gg) * t; b += (235 - b) * t; }
+      const k = (j * W + i) * 4; img.data[k] = r; img.data[k + 1] = gg; img.data[k + 2] = b; img.data[k + 3] = 255;
+    }
+  }
+  g.putImageData(img, 0, 0);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+async function textureFor(body) {
+  if (texCache[body]) return texCache[body];
+  let t;
+  if (body === 'mars') { try { t = await load('./textures/mars_2k.jpg'); } catch (e) { t = proceduralMars(); } }
+  else t = await load('./textures/moon_1024.jpg');
+  t.colorSpace = THREE.SRGBColorSpace;
+  return (texCache[body] = t);
+}
+
+// ---- Touch controls: drag = rotate, pinch = zoom, tap = pick ----
+const el = renderer.domElement, ptrs = new Map();
+let moved = 0, pinch0 = 1, zoom0 = DEFAULT_Z, anim = null;
+const AX = new THREE.Vector3(1, 0, 0), AY = new THREE.Vector3(0, 1, 0), qa = new THREE.Quaternion(), qb = new THREE.Quaternion();
+const dist = () => { const [a, b] = [...ptrs.values()]; return Math.hypot(a.x - b.x, a.y - b.y) || 1; };
+el.addEventListener('pointerdown', (e) => {
+  el.setPointerCapture(e.pointerId); ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY }); moved = 0; anim = null;
+  if (ptrs.size === 2) { pinch0 = dist(); zoom0 = camera.position.z; }
+});
+el.addEventListener('pointermove', (e) => {
+  const p = ptrs.get(e.pointerId); if (!p) return;
+  const dx = e.clientX - p.x, dy = e.clientY - p.y; p.x = e.clientX; p.y = e.clientY;
+  if (ptrs.size === 1) {
+    moved += Math.abs(dx) + Math.abs(dy);
+    const k = 0.005 * camera.position.z / DEFAULT_Z;
+    moon.quaternion.premultiply(qa.setFromAxisAngle(AY, dx * k)).premultiply(qb.setFromAxisAngle(AX, dy * k));
+  } else if (ptrs.size === 2) {
+    camera.position.z = THREE.MathUtils.clamp(zoom0 * pinch0 / dist(), 1.6, 6);
+  }
+});
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(), tmp = new THREE.Vector3();
+const facing = (o) => o.getWorldPosition(tmp).normalize().dot(camera.position.clone().normalize()) > 0.15;
+el.addEventListener('pointerup', (e) => {
+  const wasTap = ptrs.size === 1 && moved < 8; ptrs.delete(e.pointerId);
+  if (!wasTap) return;
+  ndc.set(e.clientX / innerWidth * 2 - 1, -(e.clientY / innerHeight) * 2 + 1);
+  ray.setFromCamera(ndc, camera);
+  const h = ray.intersectObjects(hits, false).find((x) => facing(x.object));
+  if (h) { select(h.object.userData.id); send('onMarkerTapped', h.object.userData.id); }
+});
+el.addEventListener('pointercancel', (e) => ptrs.delete(e.pointerId));
+
+// ---- Tweens (promise-based, run in the render loop) ----
+const tweens = [];
+const tween = (fn, ms) => new Promise((res) => tweens.push({ fn, ms, t: 0, res }));
+
+// ---- API called by Flutter (see docs/bridge_spec.md) ----
+async function setBody(body, sites) {
+  anim = null;
+  const z0 = camera.position.z;
+  await tween((k) => { camera.position.z = z0 + (6 - z0) * k; }, 700);      // zoom out ("fly away")
+  planet.material.map = await textureFor(body); planet.material.needsUpdate = true;
+  moon.quaternion.identity(); rebuildMarkers(sites); select(null);
+  await tween((k) => { camera.position.z = 6 + (DEFAULT_Z - 6) * k; }, 900); // zoom in ("arrive")
+  send('onBodyReady', body);
+}
+window.GhostsBridge = {
+  setBody,
+  focusOn(id) {
+    const m = markers[id]; if (!m) return console.error('unknown id', id);
+    select(id);
+    anim = { id, t: 0, from: moon.quaternion.clone(), to: new THREE.Quaternion().setFromUnitVectors(m.dir, new THREE.Vector3(0, 0, 1)), z0: camera.position.z, z1: 2.2 };
+  },
+  resetView() { anim = { id: null, t: 0, from: moon.quaternion.clone(), to: moon.quaternion.clone(), z0: camera.position.z, z1: DEFAULT_Z }; select(null); },
+};
+
+addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); });
+
+const clock = new THREE.Clock();
+renderer.setAnimationLoop(() => {
+  const dt = clock.getDelta();
+  for (let i = tweens.length - 1; i >= 0; i--) {
+    const t = tweens[i]; t.t += dt * 1000;
+    const k = Math.min(1, t.t / t.ms);
+    t.fn(k * k * (3 - 2 * k));
+    if (k >= 1) { tweens.splice(i, 1); t.res(); }
+  }
+  if (anim) {
+    anim.t = Math.min(1, anim.t + dt / 1.2);
+    const k = anim.t * anim.t * (3 - 2 * anim.t);
+    moon.quaternion.copy(anim.from).slerp(anim.to, k);
+    camera.position.z = anim.z0 + (anim.z1 - anim.z0) * k;
+    if (anim.t >= 1) { if (anim.id) send('onCameraArrived', anim.id); anim = null; }
+  }
+  renderer.render(scene, camera);
+});
+send('onSceneReady');
+</script>
+</body>
+</html>

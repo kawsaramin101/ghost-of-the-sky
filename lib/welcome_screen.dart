@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'app_state.dart';
 import 'game_ui.dart';
-import 'moon_screen.dart';
+import 'explore_screen.dart';
 import 'strings.dart';
 
 /// Shows the age-tier voice: same facts, different wording.
@@ -23,7 +23,7 @@ class WelcomeScreen extends StatelessWidget {
                 const Roby(size: 150),
                 if (kDebugMode) Padding(padding: const EdgeInsets.only(top: 8), child: Text('[debug] age ${s.age} -> tier: ${s.tier.name}', style: gameText(13, color: Colors.white54, weight: 500))),
                 const SizedBox(height: 24),
-                SizedBox(width: 280, child: ChunkyButton(label: tr(s, 'launch'), onTap: () => Navigator.of(context).pushReplacement(gameRoute(const MoonScreen())))),
+                SizedBox(width: 280, child: ChunkyButton(label: tr(s, 'launch'), onTap: () => Navigator.of(context).pushReplacement(gameRoute(const ExploreScreen(startBody: 'mars', startId: 'opportunity'))))),
               ]),
             ),
           ),

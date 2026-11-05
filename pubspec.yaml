@@ -18,6 +18,7 @@ flutter:
     - assets/web/
     - assets/web/vendor/
     - assets/web/textures/
+    - assets/data/
   fonts:
     - family: Baloo
       fonts:

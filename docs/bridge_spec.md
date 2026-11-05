@@ -5,15 +5,16 @@ Rule: the 3D side knows only artifact IDs and positions. All text, quizzes and t
 ## Flutter -> 3D  (`controller.evaluateJavascript(source: "GhostsBridge.fn(...)")`)
 | Function | Purpose |
 |---|---|
+| `setBody(body, sites)` | Fly away, swap the planet (`'moon'`/`'mars'`), rebuild markers from `[{id,lat,lon}]`, fly back |
 | `focusOn(id)` | Rotate/zoom the camera to the artifact, highlight its marker |
 | `resetView()` | Zoom back out, clear highlight |
-| `setBody('moon'|'mars')` | *(planned)* switch scene |
 | `startTour(ids[])` | *(planned)* fly through artifacts in order |
 
 ## 3D -> Flutter  (`window.flutter_inappwebview.callHandler(name, ...args)`)
 | Handler | Args | When |
 |---|---|---|
 | `onSceneReady` | - | Textures loaded, safe to call Flutter->3D functions |
+| `onBodyReady` | `body` | Planet swap finished, markers are live |
 | `onMarkerTapped` | `id` | User tapped a visible marker |
 | `onCameraArrived` | `id` | `focusOn` animation finished |
 
