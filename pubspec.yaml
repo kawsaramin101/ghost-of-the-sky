@@ -1,0 +1,24 @@
+name: ghosts_spike
+description: Day-1 spike - Flutter + Three.js (WebView) Moon with tappable markers.
+publish_to: none
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_inappwebview: 6.1.5   # pinned on purpose (no ^)
+  shared_preferences: ^2.5.6
+
+flutter:
+  uses-material-design: true
+  assets:        # Flutter does not recurse: list every folder
+    - assets/web/
+    - assets/web/vendor/
+    - assets/web/textures/
+  fonts:
+    - family: Baloo
+      fonts:
+        - asset: assets/fonts/BalooDa2.ttf

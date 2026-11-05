@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<style>html,body{margin:0;height:100%;background:linear-gradient(#2B0F5C,#1B0B45);overflow:hidden;touch-action:none}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
+</head>
+<body>
+<script type="module">
+import * as THREE from 'three';
+
+// ---- Spike data (lat/lon in degrees; verify against NASA sources before the final version) ----
+const SITES = [
+  { id: 'apollo11', lat: 0.674,  lon: 23.473 },
+  { id: 'apollo12', lat: -3.013, lon: -23.422 },
+  { id: 'apollo17', lat: 20.191, lon: 30.772 },
+];
+const R = 1, DEFAULT_Z = 3.2;
+
+// ---- Bridge to Flutter (queues until flutter_inappwebview is ready) ----
+const queue = [];
+const ready = () => window.flutter_inappwebview && window.flutter_inappwebview.callHandler;
+function send(name, ...args) {
+  if (ready()) window.flutter_inappwebview.callHandler(name, ...args);
+  else queue.push([name, args]);
+}
+const flush = () => { if (ready()) queue.splice(0).forEach(([n, a]) => window.flutter_inappwebview.callHandler(n, ...a)); };
+window.addEventListener('flutterInAppWebViewPlatformReady', flush);
+const poll = setInterval(() => { if (ready()) { clearInterval(poll); flush(); } }, 100);
+
+// ---- Scene ----
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 100);
+camera.position.z = DEFAULT_Z;
+scene.add(new THREE.AmbientLight(0xffffff, 0.35));
+const sun = new THREE.DirectionalLight(0xffffff, 2.5); sun.position.set(5, 2, 4); scene.add(sun);
+
+const starPos = new Float32Array(1800 * 3);
+for (let i = 0; i < starPos.length; i += 3) {
+  const v = new THREE.Vector3().randomDirection().multiplyScalar(40);
+  starPos.set([v.x, v.y, v.z], i);
+}
+const starGeo = new THREE.BufferGeometry();
+starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+scene.add(new THREE.Points(starGeo, new THREE.PointsMaterial({ color: 0xffffff, size: 0.08 })));
+
+// lat/lon -> point on an equirectangular-mapped THREE.SphereGeometry (lon 0 faces +x, 90E faces -z)
+const toVec = (lat, lon, r = R) => {
+  const a = lat * Math.PI / 180, b = lon * Math.PI / 180;
+  return new THREE.Vector3(r * Math.cos(a) * Math.cos(b), r * Math.sin(a), -r * Math.cos(a) * Math.sin(b));
+};
+
+const moon = new THREE.Group(); scene.add(moon);
+new THREE.TextureLoader().load('./textures/moon_1024.jpg', (tex) => {
+  tex.colorSpace = THREE.SRGBColorSpace;
+  moon.add(new THREE.Mesh(new THREE.SphereGeometry(R, 64, 64), new THREE.MeshStandardMaterial({ map: tex, roughness: 1 })));
+  send('onSceneReady');
+}, undefined, (e) => console.error('texture failed', e));
+
+const markers = {}, hits = [];
+for (const s of SITES) {
+  const dir = toVec(s.lat, s.lon).normalize();
+  const dot = new THREE.Mesh(new THREE.SphereGeometry(0.025, 16, 16), new THREE.MeshBasicMaterial({ color: 0xffa500 }));
+  dot.position.copy(dir.clone().multiplyScalar(R * 1.01));
+  const hit = new THREE.Mesh(new THREE.SphereGeometry(0.1, 8, 8), new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false }));
+  hit.position.copy(dot.position); hit.userData.id = s.id;
+  moon.add(dot, hit); hits.push(hit); markers[s.id] = { dir, dot };
+}
+const select = (id) => { for (const k in markers) markers[k].dot.material.color.set(k === id ? 0x00ffcc : 0xffa500); };
+
+// ---- Touch controls: drag = rotate, pinch = zoom, tap = pick ----
+const el = renderer.domElement, ptrs = new Map();
+let moved = 0, pinch0 = 1, zoom0 = DEFAULT_Z, anim = null;
+const AX = new THREE.Vector3(1, 0, 0), AY = new THREE.Vector3(0, 1, 0), qa = new THREE.Quaternion(), qb = new THREE.Quaternion();
+const dist = () => { const [a, b] = [...ptrs.values()]; return Math.hypot(a.x - b.x, a.y - b.y) || 1; };
+
+el.addEventListener('pointerdown', (e) => {
+  el.setPointerCapture(e.pointerId); ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY }); moved = 0; anim = null;
+  if (ptrs.size === 2) { pinch0 = dist(); zoom0 = camera.position.z; }
+});
+el.addEventListener('pointermove', (e) => {
+  const p = ptrs.get(e.pointerId); if (!p) return;
+  const dx = e.clientX - p.x, dy = e.clientY - p.y; p.x = e.clientX; p.y = e.clientY;
+  if (ptrs.size === 1) {
+    moved += Math.abs(dx) + Math.abs(dy);
+    const k = 0.005 * camera.position.z / DEFAULT_Z;
+    moon.quaternion.premultiply(qa.setFromAxisAngle(AY, dx * k)).premultiply(qb.setFromAxisAngle(AX, dy * k));
+  } else if (ptrs.size === 2) {
+    camera.position.z = THREE.MathUtils.clamp(zoom0 * pinch0 / dist(), 1.6, 6);
+  }
+});
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(), tmp = new THREE.Vector3();
+const facing = (o) => o.getWorldPosition(tmp).normalize().dot(camera.position.clone().normalize()) > 0.15;
+el.addEventListener('pointerup', (e) => {
+  const wasTap = ptrs.size === 1 && moved < 8; ptrs.delete(e.pointerId);
+  if (!wasTap) return;
+  ndc.set(e.clientX / innerWidth * 2 - 1, -(e.clientY / innerHeight) * 2 + 1);
+  ray.setFromCamera(ndc, camera);
+  const h = ray.intersectObjects(hits, false).find((x) => facing(x.object));
+  if (h) { select(h.object.userData.id); send('onMarkerTapped', h.object.userData.id); }
+});
+el.addEventListener('pointercancel', (e) => ptrs.delete(e.pointerId));
+
+// ---- API called by Flutter (see docs/bridge_spec.md) ----
+window.GhostsBridge = {
+  focusOn(id) {
+    const m = markers[id]; if (!m) return console.error('unknown id', id);
+    select(id);
+    anim = { id, t: 0, from: moon.quaternion.clone(), to: new THREE.Quaternion().setFromUnitVectors(m.dir, new THREE.Vector3(0, 0, 1)), z0: camera.position.z, z1: 2.2 };
+  },
+  resetView() { anim = { id: null, t: 0, from: moon.quaternion.clone(), to: moon.quaternion.clone(), z0: camera.position.z, z1: DEFAULT_Z }; select(null); },
+};
+
+addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); });
+
+const clock = new THREE.Clock();
+renderer.setAnimationLoop(() => {
+  const dt = clock.getDelta();
+  if (anim) {
+    anim.t = Math.min(1, anim.t + dt / 1.2);
+    const k = anim.t * anim.t * (3 - 2 * anim.t);
+    moon.quaternion.copy(anim.from).slerp(anim.to, k);
+    camera.position.z = anim.z0 + (anim.z1 - anim.z0) * k;
+    if (anim.t >= 1) { if (anim.id) send('onCameraArrived', anim.id); anim = null; }
+  }
+  renderer.render(scene, camera);
+});
+</script>
+</body>
+</html>
