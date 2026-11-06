@@ -1,13 +1,16 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:pointer_interceptor/pointer_interceptor.dart';
 import 'app_state.dart';
 import 'artifact.dart';
 import 'artifact_sheet.dart';
 import 'course_timeline.dart';
 import 'game_ui.dart';
 import 'onboarding_screen.dart';
+import 'scene_url.dart';
 import 'strings.dart';
 
 class ExploreScreen extends StatefulWidget {
@@ -20,6 +23,7 @@ class ExploreScreen extends StatefulWidget {
 
 class _ExploreScreenState extends State<ExploreScreen> {
   InAppWebViewController? _web;
+  Timer? _poll; // web-only event drain
   List<Artifact> _all = [];
   final _loaded = Completer<void>();
   late String _body = widget.startBody;
@@ -40,11 +44,64 @@ class _ExploreScreenState extends State<ExploreScreen> {
     });
   }
 
+  @override
+  void dispose() {
+    _poll?.cancel();
+    super.dispose();
+  }
+
   void _say(String Function(AppState) f) {
     if (mounted) setState(() => _status = f);
   }
 
   Future<void> _js(String code) async => _web?.evaluateJavascript(source: code);
+
+  // ---- 3D -> Flutter ----
+  void _onBodyReady() {
+    _busy = false;
+    _say((s) => tr(s, 'ready', vars: {'name': s.name}));
+    final id = _pendingOpen;
+    _pendingOpen = null;
+    if (id != null) _open(id);
+    if (mounted) setState(() {});
+  }
+
+  void _onCameraArrived(String id) {
+    if (id == _focusId) _showSheet(id);
+  }
+
+  /// Web has no `addJavaScriptHandler`, so we drain the scene's event queue.
+  /// The scene only starts once the iframe has loaded, so failures are normal
+  /// until then.
+  void _startWebPolling(InAppWebViewController c) {
+    _poll?.cancel();
+    _poll = Timer.periodic(const Duration(milliseconds: 120), (_) async {
+      final raw = await c.evaluateJavascript(
+          source: 'JSON.stringify(GhostsBridge.drain())');
+      if (raw is! String || raw == 'null' || raw == '[]') return;
+      final List events;
+      try {
+        events = jsonDecode(raw) as List;
+      } catch (_) {
+        return;
+      }
+      for (final e in events) {
+        final name = (e as List).first as String;
+        final args = List<dynamic>.from(e[1] as List);
+        switch (name) {
+          case 'onSceneReady':
+            await _loaded.future;
+            await _switchBody(widget.startBody, openId: widget.startId);
+          case 'onBodyReady':
+            _onBodyReady();
+          case 'onMarkerTapped':
+            _open(args.first as String);
+          case 'onCameraArrived':
+            _onCameraArrived(args.first as String);
+        }
+      }
+    });
+  }
 
   // ---- Course order: Moon first, then Mars; by year inside each; file order breaks ties ----
   int _key(Artifact a) =>
@@ -144,53 +201,54 @@ class _ExploreScreenState extends State<ExploreScreen> {
     return Scaffold(
       body: Stack(children: [
         InAppWebView(
-          initialUrlRequest:
-              URLRequest(url: WebUri('http://localhost:8080/web/index.html')),
+          initialUrlRequest: URLRequest(url: WebUri(sceneUrl)),
           initialSettings:
               InAppWebViewSettings(javaScriptEnabled: true, supportZoom: false),
           onWebViewCreated: (c) {
             _web = c;
-            // 3D -> Flutter
-            c.addJavaScriptHandler(
-                handlerName: 'onSceneReady',
-                callback: (_) async {
-                  await _loaded.future;
-                  await _switchBody(widget.startBody, openId: widget.startId);
-                  return null;
-                });
-            c.addJavaScriptHandler(
-                handlerName: 'onBodyReady',
-                callback: (_) {
-                  _busy = false;
-                  _say((s) => tr(s, 'ready', vars: {'name': s.name}));
-                  final id = _pendingOpen;
-                  _pendingOpen = null;
-                  if (id != null) _open(id);
-                  if (mounted) setState(() {});
-                  return null;
-                });
-            c.addJavaScriptHandler(
-                handlerName: 'onMarkerTapped',
-                callback: (args) {
-                  _open(args.first as String);
-                  return null;
-                });
-            c.addJavaScriptHandler(
-                handlerName: 'onCameraArrived',
-                callback: (args) {
-                  final id = args.first as String;
-                  if (id == _focusId) _showSheet(id);
-                  return null;
-                });
+            if (!kIsWeb) {
+              // Native only: flutter_inappwebview_web has no callHandler.
+              c.addJavaScriptHandler(
+                  handlerName: 'onSceneReady',
+                  callback: (_) async {
+                    await _loaded.future;
+                    await _switchBody(widget.startBody, openId: widget.startId);
+                    return null;
+                  });
+              c.addJavaScriptHandler(
+                  handlerName: 'onBodyReady',
+                  callback: (_) {
+                    _onBodyReady();
+                    return null;
+                  });
+              c.addJavaScriptHandler(
+                  handlerName: 'onMarkerTapped',
+                  callback: (args) {
+                    _open(args.first as String);
+                    return null;
+                  });
+              c.addJavaScriptHandler(
+                  handlerName: 'onCameraArrived',
+                  callback: (args) {
+                    _onCameraArrived(args.first as String);
+                    return null;
+                  });
+            }
+            // Web: no callHandler in an iframe, so poll the scene's queue.
+            if (kIsWeb) _startWebPolling(c);
           },
           onConsoleMessage: (c, m) => debugPrint('[JS] ${m.message}'),
           onReceivedError: (c, req, err) =>
               _say((s) => tr(s, 'load_error', vars: {'x': err.description})),
         ),
+        // On web the WebView iframe sits above the canvas and swallows taps.
+        // PointerInterceptor restores clickability for the HUD; it's a no-op
+        // on native platforms.
         SafeArea(
           child: Align(
             alignment: Alignment.topCenter,
-            child: Padding(
+            child: PointerInterceptor(
+              child: Padding(
               padding: const EdgeInsets.all(12),
               child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -242,19 +300,22 @@ class _ExploreScreenState extends State<ExploreScreen> {
                               : () => _js('GhostsBridge.resetView()')),
                     ]),
                   ]),
+              ),
             ),
           ),
         ),
         SafeArea(
           child: Align(
             alignment: Alignment.bottomCenter,
-            child: CourseTimeline(
-              items: _sorted(body: _body),
-              currentId: _curId,
-              enabled: !_busy,
-              onSelect: _goTo,
-              onPrev: prev == null ? null : () => _goTo(prev),
-              onNext: next == null ? null : () => _goTo(next),
+            child: PointerInterceptor(
+              child: CourseTimeline(
+                items: _sorted(body: _body),
+                currentId: _curId,
+                enabled: !_busy,
+                onSelect: _goTo,
+                onPrev: prev == null ? null : () => _goTo(prev),
+                onNext: next == null ? null : () => _goTo(next),
+              ),
             ),
           ),
         ),

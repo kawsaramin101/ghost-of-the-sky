@@ -11,6 +11,10 @@ dependencies:
     sdk: flutter
   flutter_inappwebview: 6.1.5   # pinned on purpose (no ^)
   shared_preferences: ^2.5.6
+  # On web the WebView is an <iframe> that covers the viewport and swallows
+  # clicks meant for the Flutter HUD. PointerInterceptor puts a transparent
+  # element above it so our buttons stay tappable.
+  pointer_interceptor: ^0.10.1+2
 
 flutter:
   uses-material-design: true

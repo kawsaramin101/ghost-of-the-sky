@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -27,12 +28,27 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <title>ghosts_spike</title>
   <link rel="manifest" href="manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+      background: #1B0B45
+    }
+  </style>
 </head>
+
 <body>
+  <!-- flutter_inappwebview_web ships this support script as an asset but never
+       injects it. Without it window.flutter_inappwebview is undefined, so the
+       webview's jsWebView is null and evaluateJavascript()/loadUrl() silently
+       return null. Must run before flutter_bootstrap.js. -->
+  <script src="assets/packages/flutter_inappwebview_web/assets/web/web_support.js"></script>
   <!--
     You can customize the "flutter_bootstrap.js" script.
     This is useful to provide a custom configuration to the Flutter loader
@@ -43,4 +59,5 @@
   -->
   <script src="flutter_bootstrap.js" async></script>
 </body>
+
 </html>

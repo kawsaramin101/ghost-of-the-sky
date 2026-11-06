@@ -1,396 +1,396 @@
 [
- {
-  "id": "surveyor1",
-  "body": "moon",
-  "lat": -2.474,
-  "lon": -43.338,
-  "year": 1966,
-  "lastContact": 1967,
-  "name": {
-   "en": "Surveyor 1",
-   "bn": "সার্ভেয়ার ১"
-  },
-  "place": {
-   "en": "Ocean of Storms",
-   "bn": "ঝড়ের মহাসাগর"
-  },
-  "story": {
-   "en": {
-    "young": "I’m Surveyor 1! 🛰️ In 1966 I was the first NASA robot to land softly on the Moon, and I did it on my very first try! I sent back thousands of photos that showed the Moon’s ground was strong enough to stand on. In 1967 I went quiet, and I’ve been resting here ever since.",
-    "older": "Surveyor 1 launched on May 30, 1966, and landed in the Ocean of Storms on June 2. It was the first U.S. soft landing on the Moon, a few months after the Soviet Luna 9, and it worked on the first try. It sent back more than 11,000 pictures and showed that the surface could support a spacecraft, which helped NASA plan the Apollo landings. Its last contact was in January 1967."
-   },
-   "bn": {
-    "young": "আমি সার্ভেয়ার ১! 🛰️ ১৯৬৬ সালে আমি ছিলাম চাঁদে আস্তে করে নামা নাসার প্রথম রোবট, আর প্রথমবারেই সফল হয়েছিলাম! আমি হাজার হাজার ছবি পাঠিয়েছিলাম, যাতে দেখা গেল চাঁদের মাটি দাঁড়ানোর মতো শক্ত। ১৯৬৭ সালে আমি চুপ হয়ে গেলাম, আর তখন থেকে এখানেই বিশ্রাম নিচ্ছি।",
-    "older": "সার্ভেয়ার ১ উৎক্ষেপণ হয় ১৯৬৬ সালের ৩০ মে এবং ২ জুন সে ঝড়ের মহাসাগরে নামে। সোভিয়েত লুনা ৯-এর কয়েক মাস পর এটি ছিল চাঁদে যুক্তরাষ্ট্রের প্রথম নরম অবতরণ, আর প্রথম চেষ্টাতেই সে সফল হয়। সে ১১,০০০-এরও বেশি ছবি পাঠায় এবং দেখায় যে চাঁদের মাটি মহাকাশযানের ভার সইতে পারে; এতে নাসার অ্যাপোলো অবতরণের পরিকল্পনা সহজ হয়। তার শেষ যোগাযোগ হয় ১৯৬৭ সালের জানুয়ারিতে।"
-   }
-  },
-  "fact": {
-   "en": "Surveyor 1 landed about three years before Apollo 11, as a robot scout for the astronauts.",
-   "bn": "সার্ভেয়ার ১ চাঁদে নেমেছিল অ্যাপোলো ১১-এর প্রায় তিন বছর আগে, মহাকাশচারীদের জন্য এক রোবট-স্কাউট হিসেবে।"
-  },
-  "sources": [
-   "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-045A",
-   "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
-  ],
-  "main": true
- },
- {
-  "id": "apollo11",
-  "body": "moon",
-  "lat": 0.674,
-  "lon": 23.473,
-  "year": 1969,
-  "lastContact": null,
-  "name": {
-   "en": "Apollo 11",
-   "bn": "অ্যাপোলো ১১"
-  },
-  "place": {
-   "en": "Tranquility Base",
-   "bn": "ট্রাঙ্কুইলিটি বেস"
-  },
-  "story": {
-   "en": {
-    "young": "I’m the bottom half of the Eagle! 🦅 In 1969, two astronauts landed on me. Then they flew home, and I stayed. Near me sits a special mirror that still bounces laser light back to Earth!",
-    "older": "In July 1969, Neil Armstrong and Buzz Aldrin landed at Tranquility Base in the lander Eagle. When they lifted off, its landing stage stayed behind as a launch pad. Nearby is a laser reflector with 100 special mirrors. Scientists on Earth still aim lasers at it to measure the Moon’s distance to within a few millimetres."
-   },
-   "bn": {
-    "young": "আমি ঈগলের নিচের অংশ! 🦅 ১৯৬৯ সালে দুজন মহাকাশচারী আমার ওপর নেমেছিলেন। তারপর তাঁরা বাড়ি ফিরে গেলেন, আর আমি থেকে গেলাম। আমার পাশে একটা বিশেষ আয়না আছে, যেটা এখনও লেজারের আলো পৃথিবীতে ফিরিয়ে দেয়!",
-    "older": "১৯৬৯ সালের জুলাইতে নিল আর্মস্ট্রং ও বাজ অলড্রিন ঈগল নামের ল্যান্ডারে চড়ে ট্রাঙ্কুইলিটি বেসে নামেন। ফেরার সময় ল্যান্ডারের নিচের অংশটি লঞ্চপ্যাড হিসেবে কাজ করে চাঁদেই রয়ে যায়। কাছেই আছে ১০০টি বিশেষ আয়নাওয়ালা একটি লেজার রিফ্লেক্টর। পৃথিবীর বিজ্ঞানীরা আজও তাতে লেজার ছুড়ে চাঁদের দূরত্ব কয়েক মিলিমিটার নির্ভুলভাবে মাপেন।"
-   }
-  },
-  "fact": {
-   "en": "Thanks to these mirrors, we know the Moon drifts about 3.8 cm farther from Earth every year.",
-   "bn": "এই আয়নাগুলোর কারণেই জানা গেছে, চাঁদ প্রতি বছর পৃথিবী থেকে প্রায় ৩.৮ সেন্টিমিটার করে দূরে সরে যাচ্ছে।"
-  },
-  "sources": [
-   "https://nssdc.gsfc.nasa.gov/planetary/lunar/apolloland.html",
-   "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html",
-   "https://eos.org/features/seeing-the-light",
-   "https://earth.gsfc.nasa.gov/geo/projects/sgp/updates/reflectors-placed-moon-apollo-11-astronauts-50-years-ago-continue-provide"
-  ],
-  "main": true
- },
- {
-  "id": "apollo12",
-  "body": "moon",
-  "lat": -3.013,
-  "lon": -23.422,
-  "year": 1969,
-  "lastContact": null,
-  "name": {
-   "en": "Apollo 12",
-   "bn": "অ্যাপোলো ১২"
-  },
-  "place": {
-   "en": "Ocean of Storms",
-   "bn": "ঝড়ের মহাসাগর"
-  },
-  "story": {
-   "en": {
-    "young": "I’m the spot where astronauts landed right next to an older robot! In 1969, Apollo 12 came down near Surveyor 3, which had been waiting since 1967. The astronauts walked over to say hello and took some of its parts home.",
-    "older": "In November 1969, Apollo 12 made a precise landing within walking distance of Surveyor 3, a robotic probe that had arrived in 1967. Pete Conrad and Alan Bean walked over and removed its camera and other parts, so scientists could study how materials aged on the Moon."
-   },
-   "bn": {
-    "young": "আমি সেই জায়গা, যেখানে মহাকাশচারীরা এক পুরোনো রোবটের পাশেই নেমেছিলেন! ১৯৬৯ সালে অ্যাপোলো ১২ নামল সার্ভেয়ার ৩-এর কাছে। ও ১৯৬৭ সাল থেকে অপেক্ষা করছিল। মহাকাশচারীরা হেঁটে গিয়ে ওকে ‘হ্যালো’ বললেন, আর ওর কিছু অংশ বাড়ি নিয়ে এলেন।",
-    "older": "১৯৬৯ সালের নভেম্বরে অ্যাপোলো ১২ নিখুঁতভাবে নামল সার্ভেয়ার ৩-এর হাঁটাদূরত্বে। এই রোবট-যানটি এসেছিল ১৯৬৭ সালে। পিট কনরাড ও অ্যালান বিন হেঁটে গিয়ে এর ক্যামেরাসহ কিছু অংশ খুলে নেন, যাতে বিজ্ঞানীরা দেখতে পারেন চাঁদে বছরের পর বছর থাকলে জিনিসপত্রের কী হয়।"
-   }
-  },
-  "fact": {
-   "en": "Surveyor 3 reached the Moon more than two years before Apollo 12.",
-   "bn": "সার্ভেয়ার ৩ অ্যাপোলো ১২-এর দুই বছরেরও বেশি আগে চাঁদে পৌঁছেছিল।"
-  },
-  "sources": [
-   "https://nssdc.gsfc.nasa.gov/planetary/lunar/apolloland.html",
-   "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html"
-  ],
-  "main": false
- },
- {
-  "id": "apollo14",
-  "body": "moon",
-  "lat": -3.646,
-  "lon": -17.472,
-  "year": 1971,
-  "lastContact": null,
-  "name": {
-   "en": "Apollo 14",
-   "bn": "অ্যাপোলো ১৪"
-  },
-  "place": {
-   "en": "Fra Mauro",
-   "bn": "ফ্রা মাউরো"
-  },
-  "story": {
-   "en": {
-    "young": "Guess what? Astronaut Alan Shepard played golf on me in 1971! ⛳ The balls flew far because the Moon has no air and weak gravity. They are still up here!",
-    "older": "At Fra Mauro in February 1971, Alan Shepard and Edgar Mitchell explored hilly ground made of rock thrown out by a giant ancient impact. They pulled a two-wheeled cart for tools and samples. Before leaving, Shepard fixed a golf-club head to a tool handle and hit golf balls."
-   },
-   "bn": {
-    "young": "বলো তো কী হয়েছিল? ১৯৭১ সালে মহাকাশচারী অ্যালান শেপার্ড আমার ওপর গল্ফ খেলেছিলেন! ⛳ চাঁদে বাতাস নেই, আর টানও কম, তাই বলগুলো অনেক দূর উড়ে গিয়েছিল। ওগুলো এখনও এখানেই আছে!",
-    "older": "১৯৭১ সালের ফেব্রুয়ারিতে ফ্রা মাউরো অঞ্চলে অ্যালান শেপার্ড ও এডগার মিচেল পাহাড়ি জমিতে হেঁটেছিলেন। প্রাচীনকালের এক বিশাল সংঘর্ষে ছিটকে আসা পাথর দিয়ে এই জমি তৈরি। যন্ত্রপাতি আর নমুনা রাখার জন্য তাঁরা দুই চাকার একটি হাতগাড়ি টানতেন। ফেরার আগে শেপার্ড একটি যন্ত্রের হাতলে গল্ফ-স্টিকের মাথা লাগিয়ে গল্ফ বল মেরেছিলেন।"
-   }
-  },
-  "fact": {
-   "en": "Apollo 14 also left one of the three Apollo laser mirrors that scientists still use.",
-   "bn": "অ্যাপোলো ১৪ তিনটি অ্যাপোলো লেজার-আয়নার একটি রেখে গেছে, যেগুলো বিজ্ঞানীরা আজও ব্যবহার করেন।"
-  },
-  "sources": [
-   "https://nssdc.gsfc.nasa.gov/planetary/lunar/apolloland.html",
-   "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html",
-   "https://eos.org/features/seeing-the-light"
-  ],
-  "main": false
- },
- {
-  "id": "apollo15",
-  "body": "moon",
-  "lat": 26.132,
-  "lon": 3.633,
-  "year": 1971,
-  "lastContact": null,
-  "name": {
-   "en": "Apollo 15",
-   "bn": "অ্যাপোলো ১৫"
-  },
-  "place": {
-   "en": "Hadley Rille",
-   "bn": "হ্যাডলি রিল"
-  },
-  "story": {
-   "en": {
-    "young": "I’m the Moon car! 🚗 In 1971, astronauts David Scott and James Irwin drove me around the Moon. When they flew home, I stayed parked, and I’m still parked here today!",
-    "older": "Apollo 15 (July 1971) was the first mission to use a Lunar Roving Vehicle. David Scott and James Irwin drove about 28 km around the Hadley Rille area and brought back about 77 kg of samples. At the end, Scott dropped a hammer and a feather together. With no air, they landed at the same time. The rover was left parked on the Moon."
-   },
-   "bn": {
-    "young": "আমি চাঁদের গাড়ি! 🚗 ১৯৭১ সালে মহাকাশচারী ডেভিড স্কট আর জেমস আরউইন আমাকে চালিয়ে চাঁদে ঘুরে বেড়িয়েছিলেন। তাঁরা বাড়ি ফিরে গেলেন, আর আমি এখানেই পার্ক করা আছি, আজও!",
-    "older": "অ্যাপোলো ১৫ (১৯৭১ সালের জুলাই) ছিল প্রথম অভিযান, যেখানে চাঁদে চলার গাড়ি (লুনার রোভিং ভেহিকল) ব্যবহার হয়। ডেভিড স্কট ও জেমস আরউইন হ্যাডলি রিল অঞ্চলে প্রায় ২৮ কিলোমিটার ঘুরেছিলেন এবং প্রায় ৭৭ কেজি নমুনা এনেছিলেন। শেষে স্কট একটা হাতুড়ি আর একটা পালক একসঙ্গে ছেড়ে দেন; বাতাস নেই বলে দুটোই একসঙ্গে মাটিতে পড়ে। গাড়িটি চাঁদেই পার্ক করা অবস্থায় রেখে আসা হয়।"
-   }
-  },
-  "fact": {
-   "en": "Apollo 15’s mirror array has 300 mirrors, three times more than Apollo 11’s, so it gives the strongest signal.",
-   "bn": "অ্যাপোলো ১৫-এর আয়না-সারিতে ৩০০টি আয়না আছে, যা অ্যাপোলো ১১-এর তিন গুণ। তাই এর সংকেত সবচেয়ে জোরালো।"
-  },
-  "sources": [
-   "https://nssdc.gsfc.nasa.gov/planetary/lunar/apolloland.html",
-   "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html",
-   "https://eos.org/features/seeing-the-light",
-   "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
-  ],
-  "main": true
- },
- {
-  "id": "apollo16",
-  "body": "moon",
-  "lat": -8.973,
-  "lon": 15.501,
-  "year": 1972,
-  "lastContact": null,
-  "name": {
-   "en": "Apollo 16",
-   "bn": "অ্যাপোলো ১৬"
-  },
-  "place": {
-   "en": "Descartes Highlands",
-   "bn": "দেকার্ত উচ্চভূমি"
-  },
-  "story": {
-   "en": {
-    "young": "In 1972, astronaut Charles Duke left a photo of his family on me! 📷 I’m in the Moon’s mountains, called the highlands. The astronauts drove a Moon car here, and it’s still parked.",
-    "older": "Apollo 16 (April 1972) was the first mission to land in the lunar highlands. John Young and Charles Duke drove the rover, collected almost 96 kg of rocks, and left the rover parked afterwards. Duke also left a photo of his family on the surface, which sunlight has probably faded by now."
-   },
-   "bn": {
-    "young": "১৯৭২ সালে মহাকাশচারী চার্লস ডিউক আমার ওপর তাঁর পরিবারের একটা ছবি রেখে গিয়েছিলেন! 📷 আমি চাঁদের পাহাড়ি এলাকায়, যাকে বলে উচ্চভূমি। মহাকাশচারীরা এখানে একটা চাঁদের গাড়ি চালিয়েছিলেন, সেটা এখনও পার্ক করা।",
-    "older": "অ্যাপোলো ১৬ (১৯৭২ সালের এপ্রিল) ছিল চাঁদের উচ্চভূমিতে নামা প্রথম অভিযান। জন ইয়াং ও চার্লস ডিউক গাড়ি চালিয়ে প্রায় ৯৬ কেজি পাথর সংগ্রহ করেন, তারপর গাড়িটি সেখানেই রেখে আসেন। ডিউক নিজের পরিবারের একটি ছবিও রেখে গিয়েছিলেন; সূর্যের আলোয় সেটি এতদিনে সম্ভবত ফিকে হয়ে গেছে।"
-   }
-  },
-  "fact": {
-   "en": "The Moon’s bright highlands are older than the dark plains called “seas”.",
-   "bn": "চাঁদের উজ্জ্বল উচ্চভূমি কালো সমভূমি, অর্থাৎ ‘সাগর’-এর চেয়ে পুরোনো।"
-  },
-  "sources": [
-   "https://nssdc.gsfc.nasa.gov/planetary/lunar/apolloland.html",
-   "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html",
-   "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
-  ],
-  "main": false
- },
- {
-  "id": "apollo17",
-  "body": "moon",
-  "lat": 20.191,
-  "lon": 30.772,
-  "year": 1972,
-  "lastContact": null,
-  "name": {
-   "en": "Apollo 17",
-   "bn": "অ্যাপোলো ১৭"
-  },
-  "place": {
-   "en": "Taurus–Littrow Valley",
-   "bn": "টরাস–লিত্রো উপত্যকা"
-  },
-  "story": {
-   "en": {
-    "young": "I’m the last place people have visited on the Moon, so far! In 1972, Gene Cernan and Harrison Schmitt walked here and left a plaque wishing for peace. Maybe someone reading this will go next! 🌙",
-    "older": "Apollo 17 (December 1972) is the most recent time humans have landed on the Moon. Harrison Schmitt, the only professional geologist to walk there, spotted orange soil that turned out to be tiny glass beads from ancient volcanic eruptions. The crew brought home a record haul of samples and left a plaque wishing for peace."
-   },
-   "bn": {
-    "young": "আমি চাঁদের সেই জায়গা, যেখানে মানুষ সবশেষে গিয়েছিল, এখন পর্যন্ত! ১৯৭২ সালে জিন সের্নান আর হ্যারিসন শ্মিট এখানে হেঁটেছিলেন এবং শান্তির কামনা লেখা একটি ফলক রেখে গিয়েছিলেন। হয়তো যে এটা পড়ছে, সে-ই পরের জন হবে! 🌙",
-    "older": "অ্যাপোলো ১৭ (১৯৭২ সালের ডিসেম্বর) এখন পর্যন্ত চাঁদে মানুষের সর্বশেষ অবতরণ। হ্যারিসন শ্মিট, চাঁদে হাঁটা একমাত্র পেশাদার ভূতাত্ত্বিক, কমলা রঙের মাটি দেখতে পান; পরে জানা যায়, সেটা আগ্নেয়গিরির ছোট ছোট কাচের দানা। দলটি রেকর্ড পরিমাণ নমুনা পৃথিবীতে আনে এবং শান্তি কামনা করে একটি ফলক রেখে আসে।"
-   }
-  },
-  "fact": {
-   "en": "Apollo 17 brought home the most Moon rock of any mission: about 110 kg.",
-   "bn": "চাঁদ থেকে সবচেয়ে বেশি পাথর এনেছিল অ্যাপোলো ১৭: প্রায় ১১০ কেজি।"
-  },
-  "sources": [
-   "https://nssdc.gsfc.nasa.gov/planetary/lunar/apolloland.html",
-   "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html"
-  ],
-  "main": false
- },
- {
-  "id": "opportunity",
-  "body": "mars",
-  "lat": -1.95,
-  "lon": -5.53,
-  "year": 2004,
-  "lastContact": 2018,
-  "name": {
-   "en": "Opportunity",
-   "bn": "অপরচুনিটি"
-  },
-  "place": {
-   "en": "Meridiani Planum",
-   "bn": "মেরিডিয়ানি সমভূমি"
-  },
-  "story": {
-   "en": {
-    "young": "I’m Opportunity, but my friends call me Oppy! 🤖 I was built to work for 90 Mars days, but I worked for almost 15 years. I drove farther than a marathon and found clues that Mars once had water. One big dust storm hid the Sun, and my battery ran low. I’m resting on Mars now.",
-    "older": "Opportunity landed in Eagle Crater in January 2004. It was planned to work for 90 Mars days (sols) and worked for more than 5,000. It found rocks showing that water once flowed there, and it drove 45 km (28 miles), farther than a marathon. In 2018 a planet-wide dust storm blocked its sunlight. Its last signal came on June 10, 2018, from Perseverance Valley, and NASA ended the mission in February 2019."
-   },
-   "bn": {
-    "young": "আমি অপরচুনিটি, তবে বন্ধুরা আমাকে ‘অপি’ ডাকে! 🤖 আমাকে বানানো হয়েছিল মঙ্গলের ৯০ দিন কাজ করার জন্য, কিন্তু আমি কাজ করেছি প্রায় ১৫ বছর। আমি ম্যারাথনের চেয়েও বেশি পথ ছুটেছি, আর খুঁজে পেয়েছি মঙ্গলে একসময় পানি থাকার চিহ্ন। এক বিশাল ধুলোঝড় সূর্য ঢেকে দিল, আর আমার ব্যাটারি ফুরিয়ে এল। এখন আমি মঙ্গলেই বিশ্রাম নিচ্ছি।",
-    "older": "অপরচুনিটি ২০০৪ সালের জানুয়ারিতে ঈগল ক্রেটারে নামে। পরিকল্পনা ছিল ৯০ সল (মঙ্গলের দিন) কাজ করার; সে কাজ করেছে ৫,০০০-এরও বেশি সল। সে এমন পাথর খুঁজে পায়, যা দেখায় সেখানে একসময় পানি বইত। সে প্রায় ৪৫ কিলোমিটার (২৮ মাইল) পথ চলেছে, যা ম্যারাথনের চেয়েও বেশি। ২০১৮ সালে গ্রহজুড়ে ধুলোঝড়ে তার সৌরপ্যানেলে আলো পৌঁছাতে পারেনি। শেষ সংকেত আসে ২০১৮ সালের ১০ জুন, পারসিভারেন্স ভ্যালি থেকে; ২০১৯ সালের ফেব্রুয়ারিতে নাসা মিশন শেষ ঘোষণা করে।"
-   }
-  },
-  "fact": {
-   "en": "The famous line “My battery is low and it’s getting dark” was a poetic translation. The real last signal was numbers about power and dust.",
-   "bn": "“আমার ব্যাটারি প্রায় শেষ, আর চারপাশ অন্ধকার হয়ে আসছে” লাইনটি ছিল কাব্যিক অনুবাদ। আসল শেষ সংকেত ছিল বিদ্যুৎ আর ধুলো নিয়ে কিছু সংখ্যা।"
-  },
-  "sources": [
-   "https://www.jpl.nasa.gov/images/rovers-landing-hardware-at-eagle-crater-mars",
-   "https://snopes.com/fact-check/opportunity-rovers-final-words/",
-   "https://www.wral.com/amp/my-battery-is-low-and-it-s-getting-dark-end-of-opportunity-mission-a-loss-for-team/18197530/"
-  ],
-  "main": true
- },
- {
-  "id": "spirit",
-  "body": "mars",
-  "lat": -14.57,
-  "lon": 175.48,
-  "year": 2004,
-  "lastContact": 2010,
-  "name": {
-   "en": "Spirit",
-   "bn": "স্পিরিট"
-  },
-  "place": {
-   "en": "Gusev Crater",
-   "bn": "গুসেভ ক্রেটার"
-  },
-  "story": {
-   "en": {
-    "young": "I’m Spirit, Oppy’s twin! 🤖 I landed in a huge crater called Gusev in 2004 and found clues that water once shaped the rocks. In 2009 I got stuck in soft sand. Winter came, my solar panels could not catch enough sunlight, and I fell asleep in 2010.",
-    "older": "Spirit landed in Gusev Crater in January 2004, about three weeks before its twin Opportunity. It climbed hills and found bright soil rich in silica, a mineral that often forms where hot water or steam is present. In 2009 it became stuck in soft sand and could not tilt its solar panels toward the Sun in winter. Its last contact was on March 22, 2010, and NASA ended recovery efforts in 2011."
-   },
-   "bn": {
-    "young": "আমি স্পিরিট, অপির যমজ! 🤖 ২০০৪ সালে আমি গুসেভ নামের এক বিশাল গর্তে নেমেছিলাম, আর খুঁজে পেয়েছিলাম পাথরে পানির ছাপ থাকার সূত্র। ২০০৯ সালে আমি নরম বালুতে আটকে গেলাম। শীত এল, আমার সৌরপ্যানেল যথেষ্ট আলো পেল না, আর ২০১০ সালে আমি ঘুমিয়ে পড়লাম।",
-    "older": "স্পিরিট ২০০৪ সালের জানুয়ারিতে গুসেভ ক্রেটারে নামে, তার যমজ অপরচুনিটির প্রায় তিন সপ্তাহ আগে। সে পাহাড়ে উঠেছিল এবং সিলিকায় সমৃদ্ধ উজ্জ্বল মাটি খুঁজে পায়; যেখানে গরম পানি বা বাষ্প থাকে, সেখানে প্রায়ই এই খনিজ তৈরি হয়। ২০০৯ সালে সে নরম বালুতে আটকে যায়, ফলে শীতে সৌরপ্যানেল সূর্যের দিকে কাত করতে পারেনি। শেষ যোগাযোগ হয় ২০১০ সালের ২২ মার্চ; ২০১১ সালে নাসা তাকে ফিরিয়ে আনার চেষ্টা বন্ধ করে।"
-   }
-  },
-  "fact": {
-   "en": "Spirit worked for 2,210 sols, many times longer than the 90 planned.",
-   "bn": "স্পিরিট ২,২১০ সল কাজ করেছে, পরিকল্পনার ৯০ সলের চেয়ে অনেক বেশি।"
-  },
-  "sources": [
-   "https://ode.rsl.wustl.edu/mars/pagehelp/Content/Missions_Instruments/Landing_Sites.htm",
-   "https://ipfs.ssi.eecc.de/ipns/en.wikipedia-on-ipfs.org/wiki/List_of_artificial_objects_on_Mars"
-  ],
-  "main": false
- },
- {
-  "id": "pathfinder",
-  "body": "mars",
-  "lat": 19.13,
-  "lon": -33.5,
-  "year": 1997,
-  "lastContact": 1997,
-  "name": {
-   "en": "Pathfinder & Sojourner",
-   "bn": "পাথফাইন্ডার ও সোজার্নার"
-  },
-  "place": {
-   "en": "Ares Vallis",
-   "bn": "আরেস ভ্যালিস"
-  },
-  "story": {
-   "en": {
-    "young": "Hello! I’m Sojourner, the very first rover to drive on Mars! 🚙 My name came from a contest for students. I’m about as big as a microwave oven. I was planned to work for 7 days, but I worked for 83!",
-    "older": "On July 4, 1997, Mars Pathfinder bounced to a stop on airbags in Ares Vallis, an ancient flood channel. The next day the rover Sojourner rolled out. It was planned to work for 7 sols and worked for 83. It drove about 100 m, never more than about 12 m from the lander, and used an X-ray instrument to study rocks. The lander’s last successful contact with Earth was on September 27, 1997, and engineers suspect its battery wore out."
-   },
-   "bn": {
-    "young": "হ্যালো! আমি সোজার্নার, মঙ্গলে চলা প্রথম রোভার! 🚙 আমার নাম এসেছিল ছাত্রছাত্রীদের এক প্রতিযোগিতা থেকে। আমি প্রায় একটা মাইক্রোওয়েভ ওভেনের মতো বড়। আমার কাজ করার কথা ছিল ৭ দিন, কিন্তু আমি কাজ করেছি ৮৩ দিন!",
-    "older": "১৯৯৭ সালের ৪ জুলাই মার্স পাথফাইন্ডার আরেস ভ্যালিসে নামে; এটি এক প্রাচীন বন্যার খাত। এয়ারব্যাগের ওপর লাফিয়ে লাফিয়ে সে থামে। পরদিন সোজার্নার রোভার বেরিয়ে আসে। তার কাজ করার কথা ছিল ৭ সল, কিন্তু সে কাজ করেছে ৮৩ সল। সে প্রায় ১০০ মিটার পথ চলেছিল, ল্যান্ডার থেকে কখনও ১২ মিটারের বেশি দূরে যায়নি, আর এক্স-রে যন্ত্র দিয়ে পাথর পরীক্ষা করেছিল। ল্যান্ডারের সঙ্গে পৃথিবীর শেষ সফল যোগাযোগ হয় ১৯৯৭ সালের ২৭ সেপ্টেম্বর; প্রকৌশলীদের ধারণা, তার ব্যাটারি ফুরিয়ে গিয়েছিল।"
-   }
-  },
-  "fact": {
-   "en": "Sojourner’s six-wheel rocker-bogie suspension is still used on NASA’s Mars rovers today.",
-   "bn": "সোজার্নারের ছয় চাকার রকার-বগি সাসপেনশন আজও নাসার মঙ্গল-রোভারে ব্যবহার হয়।"
-  },
-  "sources": [
-   "https://nssdc.gsfc.nasa.gov/planetary/marsland.html",
-   "https://lightsinthedark.com/2012/07/22/remembering-sojourner-the-first-mars-rover",
-   "https://en.wikipedia.org/wiki/Sojourner_(rover)"
-  ],
-  "main": true
- },
- {
-  "id": "viking1",
-  "body": "mars",
-  "lat": 22.48,
-  "lon": -49.97,
-  "year": 1976,
-  "lastContact": 1982,
-  "name": {
-   "en": "Viking 1",
-   "bn": "ভাইকিং ১"
-  },
-  "place": {
-   "en": "Chryse Planitia",
-   "bn": "ক্রাইসে সমভূমি"
-  },
-  "story": {
-   "en": {
-    "young": "I’m Viking 1! 🛰️ In 1976 I landed on Mars and sent back the first clear photos from its surface. I scooped up soil to look for tiny living things. I kept working for more than six years!",
-    "older": "Viking 1 landed in Chryse Planitia on July 20, 1976, and Viking 2 followed in September. Its cameras returned the first clear pictures from the surface of Mars, and its experiments tested the soil for signs of microbial life. The results did not give clear evidence of life. Viking 1 worked for more than six years, and its last transmission came on November 11, 1982."
-   },
-   "bn": {
-    "young": "আমি ভাইকিং ১! 🛰️ ১৯৭৬ সালে আমি মঙ্গলে নেমেছিলাম এবং সেখানকার মাটি থেকে তোলা প্রথম পরিষ্কার ছবি পাঠিয়েছিলাম। ছোট্ট প্রাণের খোঁজে আমি মাটি তুলে পরীক্ষা করেছিলাম। আমি ছয় বছরেরও বেশি কাজ করেছি!",
-    "older": "ভাইকিং ১ ১৯৭৬ সালের ২০ জুলাই ক্রাইসে সমভূমিতে নামে; সেপ্টেম্বরে নামে ভাইকিং ২। এর ক্যামেরা মঙ্গলের মাটি থেকে তোলা প্রথম পরিষ্কার ছবি পাঠায়। এর পরীক্ষায় মাটিতে অণুজীবের চিহ্ন খোঁজা হয়েছিল; ফল জীবনের স্পষ্ট প্রমাণ দেয়নি। ভাইকিং ১ ছয় বছরেরও বেশি কাজ করেছে, শেষ সংকেত পাঠায় ১৯৮২ সালের ১১ নভেম্বর।"
-   }
-  },
-  "fact": {
-   "en": "Viking 1 and Viking 2 landed on Mars just six weeks apart in 1976.",
-   "bn": "১৯৭৬ সালে ভাইকিং ১ আর ভাইকিং ২ মঙ্গলে নেমেছিল মাত্র ছয় সপ্তাহের ব্যবধানে।"
-  },
-  "sources": [
-   "https://nssdc.gsfc.nasa.gov/planetary/marsland.html",
-   "https://orbitcodex.com/landing-sites/chryse-planitia",
-   "https://ipfs.ssi.eecc.de/ipns/en.wikipedia-on-ipfs.org/wiki/List_of_artificial_objects_on_Mars"
-  ],
-  "main": true
- }
+    {
+        "id": "surveyor1",
+        "body": "moon",
+        "lat": -2.474,
+        "lon": -43.338,
+        "year": 1966,
+        "lastContact": 1967,
+        "name": {
+            "en": "Surveyor 1",
+            "bn": "সার্ভেয়ার ১"
+        },
+        "place": {
+            "en": "Ocean of Storms",
+            "bn": "ঝড়ের মহাসাগর"
+        },
+        "story": {
+            "en": {
+                "young": "I’m Surveyor 1! 🛰️ In 1966 I was the first NASA robot to land softly on the Moon, and I did it on my very first try! I sent back thousands of photos that showed the Moon’s ground was strong enough to stand on. In 1967 I went quiet, and I’ve been resting here ever since.",
+                "older": "Surveyor 1 launched on May 30, 1966, and landed in the Ocean of Storms on June 2. It was the first U.S. soft landing on the Moon, a few months after the Soviet Luna 9, and it worked on the first try. It sent back more than 11,000 pictures and showed that the surface could support a spacecraft, which helped NASA plan the Apollo landings. Its last contact was in January 1967."
+            },
+            "bn": {
+                "young": "আমি সার্ভেয়ার ১! 🛰️ ১৯৬৬ সালে আমি ছিলাম চাঁদে আস্তে করে নামা নাসার প্রথম রোবট, আর প্রথমবারেই সফল হয়েছিলাম! আমি হাজার হাজার ছবি পাঠিয়েছিলাম, যাতে দেখা গেল চাঁদের মাটি দাঁড়ানোর মতো শক্ত। ১৯৬৭ সালে আমি চুপ হয়ে গেলাম, আর তখন থেকে এখানেই বিশ্রাম নিচ্ছি।",
+                "older": "সার্ভেয়ার ১ উৎক্ষেপণ হয় ১৯৬৬ সালের ৩০ মে এবং ২ জুন সে ঝড়ের মহাসাগরে নামে। সোভিয়েত লুনা ৯-এর কয়েক মাস পর এটি ছিল চাঁদে যুক্তরাষ্ট্রের প্রথম নরম অবতরণ, আর প্রথম চেষ্টাতেই সে সফল হয়। সে ১১,০০০-এরও বেশি ছবি পাঠায় এবং দেখায় যে চাঁদের মাটি মহাকাশযানের ভার সইতে পারে; এতে নাসার অ্যাপোলো অবতরণের পরিকল্পনা সহজ হয়। তার শেষ যোগাযোগ হয় ১৯৬৭ সালের জানুয়ারিতে।"
+            }
+        },
+        "fact": {
+            "en": "Surveyor 1 landed about three years before Apollo 11, as a robot scout for the astronauts.",
+            "bn": "সার্ভেয়ার ১ চাঁদে নেমেছিল অ্যাপোলো ১১-এর প্রায় তিন বছর আগে, মহাকাশচারীদের জন্য এক রোবট-স্কাউট হিসেবে।"
+        },
+        "sources": [
+            "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-045A",
+            "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+        ],
+        "main": true
+    },
+    {
+        "id": "apollo11",
+        "body": "moon",
+        "lat": 0.674,
+        "lon": 23.473,
+        "year": 1969,
+        "lastContact": null,
+        "name": {
+            "en": "Apollo 11",
+            "bn": "অ্যাপোলো ১১"
+        },
+        "place": {
+            "en": "Tranquility Base",
+            "bn": "ট্রাঙ্কুইলিটি বেস"
+        },
+        "story": {
+            "en": {
+                "young": "I’m the bottom half of the Eagle! 🦅 In 1969, two astronauts landed on me. Then they flew home, and I stayed. Near me sits a special mirror that still bounces laser light back to Earth!",
+                "older": "In July 1969, Neil Armstrong and Buzz Aldrin landed at Tranquility Base in the lander Eagle. When they lifted off, its landing stage stayed behind as a launch pad. Nearby is a laser reflector with 100 special mirrors. Scientists on Earth still aim lasers at it to measure the Moon’s distance to within a few millimetres."
+            },
+            "bn": {
+                "young": "আমি ঈগলের নিচের অংশ! 🦅 ১৯৬৯ সালে দুজন মহাকাশচারী আমার ওপর নেমেছিলেন। তারপর তাঁরা বাড়ি ফিরে গেলেন, আর আমি থেকে গেলাম। আমার পাশে একটা বিশেষ আয়না আছে, যেটা এখনও লেজারের আলো পৃথিবীতে ফিরিয়ে দেয়!",
+                "older": "১৯৬৯ সালের জুলাইতে নিল আর্মস্ট্রং ও বাজ অলড্রিন ঈগল নামের ল্যান্ডারে চড়ে ট্রাঙ্কুইলিটি বেসে নামেন। ফেরার সময় ল্যান্ডারের নিচের অংশটি লঞ্চপ্যাড হিসেবে কাজ করে চাঁদেই রয়ে যায়। কাছেই আছে ১০০টি বিশেষ আয়নাওয়ালা একটি লেজার রিফ্লেক্টর। পৃথিবীর বিজ্ঞানীরা আজও তাতে লেজার ছুড়ে চাঁদের দূরত্ব কয়েক মিলিমিটার নির্ভুলভাবে মাপেন।"
+            }
+        },
+        "fact": {
+            "en": "Thanks to these mirrors, we know the Moon drifts about 3.8 cm farther from Earth every year.",
+            "bn": "এই আয়নাগুলোর কারণেই জানা গেছে, চাঁদ প্রতি বছর পৃথিবী থেকে প্রায় ৩.৮ সেন্টিমিটার করে দূরে সরে যাচ্ছে।"
+        },
+        "sources": [
+            "https://nssdc.gsfc.nasa.gov/planetary/lunar/apolloland.html",
+            "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html",
+            "https://eos.org/features/seeing-the-light",
+            "https://earth.gsfc.nasa.gov/geo/projects/sgp/updates/reflectors-placed-moon-apollo-11-astronauts-50-years-ago-continue-provide"
+        ],
+        "main": true
+    },
+    {
+        "id": "apollo12",
+        "body": "moon",
+        "lat": -3.013,
+        "lon": -23.422,
+        "year": 1969,
+        "lastContact": null,
+        "name": {
+            "en": "Apollo 12",
+            "bn": "অ্যাপোলো ১২"
+        },
+        "place": {
+            "en": "Ocean of Storms",
+            "bn": "ঝড়ের মহাসাগর"
+        },
+        "story": {
+            "en": {
+                "young": "I’m the spot where astronauts landed right next to an older robot! In 1969, Apollo 12 came down near Surveyor 3, which had been waiting since 1967. The astronauts walked over to say hello and took some of its parts home.",
+                "older": "In November 1969, Apollo 12 made a precise landing within walking distance of Surveyor 3, a robotic probe that had arrived in 1967. Pete Conrad and Alan Bean walked over and removed its camera and other parts, so scientists could study how materials aged on the Moon."
+            },
+            "bn": {
+                "young": "আমি সেই জায়গা, যেখানে মহাকাশচারীরা এক পুরোনো রোবটের পাশেই নেমেছিলেন! ১৯৬৯ সালে অ্যাপোলো ১২ নামল সার্ভেয়ার ৩-এর কাছে। ও ১৯৬৭ সাল থেকে অপেক্ষা করছিল। মহাকাশচারীরা হেঁটে গিয়ে ওকে ‘হ্যালো’ বললেন, আর ওর কিছু অংশ বাড়ি নিয়ে এলেন।",
+                "older": "১৯৬৯ সালের নভেম্বরে অ্যাপোলো ১২ নিখুঁতভাবে নামল সার্ভেয়ার ৩-এর হাঁটাদূরত্বে। এই রোবট-যানটি এসেছিল ১৯৬৭ সালে। পিট কনরাড ও অ্যালান বিন হেঁটে গিয়ে এর ক্যামেরাসহ কিছু অংশ খুলে নেন, যাতে বিজ্ঞানীরা দেখতে পারেন চাঁদে বছরের পর বছর থাকলে জিনিসপত্রের কী হয়।"
+            }
+        },
+        "fact": {
+            "en": "Surveyor 3 reached the Moon more than two years before Apollo 12.",
+            "bn": "সার্ভেয়ার ৩ অ্যাপোলো ১২-এর দুই বছরেরও বেশি আগে চাঁদে পৌঁছেছিল।"
+        },
+        "sources": [
+            "https://nssdc.gsfc.nasa.gov/planetary/lunar/apolloland.html",
+            "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html"
+        ],
+        "main": false
+    },
+    {
+        "id": "apollo14",
+        "body": "moon",
+        "lat": -3.646,
+        "lon": -17.472,
+        "year": 1971,
+        "lastContact": null,
+        "name": {
+            "en": "Apollo 14",
+            "bn": "অ্যাপোলো ১৪"
+        },
+        "place": {
+            "en": "Fra Mauro",
+            "bn": "ফ্রা মাউরো"
+        },
+        "story": {
+            "en": {
+                "young": "Guess what? Astronaut Alan Shepard played golf on me in 1971! ⛳ The balls flew far because the Moon has no air and weak gravity. They are still up here!",
+                "older": "At Fra Mauro in February 1971, Alan Shepard and Edgar Mitchell explored hilly ground made of rock thrown out by a giant ancient impact. They pulled a two-wheeled cart for tools and samples. Before leaving, Shepard fixed a golf-club head to a tool handle and hit golf balls."
+            },
+            "bn": {
+                "young": "বলো তো কী হয়েছিল? ১৯৭১ সালে মহাকাশচারী অ্যালান শেপার্ড আমার ওপর গল্ফ খেলেছিলেন! ⛳ চাঁদে বাতাস নেই, আর টানও কম, তাই বলগুলো অনেক দূর উড়ে গিয়েছিল। ওগুলো এখনও এখানেই আছে!",
+                "older": "১৯৭১ সালের ফেব্রুয়ারিতে ফ্রা মাউরো অঞ্চলে অ্যালান শেপার্ড ও এডগার মিচেল পাহাড়ি জমিতে হেঁটেছিলেন। প্রাচীনকালের এক বিশাল সংঘর্ষে ছিটকে আসা পাথর দিয়ে এই জমি তৈরি। যন্ত্রপাতি আর নমুনা রাখার জন্য তাঁরা দুই চাকার একটি হাতগাড়ি টানতেন। ফেরার আগে শেপার্ড একটি যন্ত্রের হাতলে গল্ফ-স্টিকের মাথা লাগিয়ে গল্ফ বল মেরেছিলেন।"
+            }
+        },
+        "fact": {
+            "en": "Apollo 14 also left one of the three Apollo laser mirrors that scientists still use.",
+            "bn": "অ্যাপোলো ১৪ তিনটি অ্যাপোলো লেজার-আয়নার একটি রেখে গেছে, যেগুলো বিজ্ঞানীরা আজও ব্যবহার করেন।"
+        },
+        "sources": [
+            "https://nssdc.gsfc.nasa.gov/planetary/lunar/apolloland.html",
+            "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html",
+            "https://eos.org/features/seeing-the-light"
+        ],
+        "main": false
+    },
+    {
+        "id": "apollo15",
+        "body": "moon",
+        "lat": 26.132,
+        "lon": 3.633,
+        "year": 1971,
+        "lastContact": null,
+        "name": {
+            "en": "Apollo 15",
+            "bn": "অ্যাপোলো ১৫"
+        },
+        "place": {
+            "en": "Hadley Rille",
+            "bn": "হ্যাডলি রিল"
+        },
+        "story": {
+            "en": {
+                "young": "I’m the Moon car! 🚗 In 1971, astronauts David Scott and James Irwin drove me around the Moon. When they flew home, I stayed parked, and I’m still parked here today!",
+                "older": "Apollo 15 (July 1971) was the first mission to use a Lunar Roving Vehicle. David Scott and James Irwin drove about 28 km around the Hadley Rille area and brought back about 77 kg of samples. At the end, Scott dropped a hammer and a feather together. With no air, they landed at the same time. The rover was left parked on the Moon."
+            },
+            "bn": {
+                "young": "আমি চাঁদের গাড়ি! 🚗 ১৯৭১ সালে মহাকাশচারী ডেভিড স্কট আর জেমস আরউইন আমাকে চালিয়ে চাঁদে ঘুরে বেড়িয়েছিলেন। তাঁরা বাড়ি ফিরে গেলেন, আর আমি এখানেই পার্ক করা আছি, আজও!",
+                "older": "অ্যাপোলো ১৫ (১৯৭১ সালের জুলাই) ছিল প্রথম অভিযান, যেখানে চাঁদে চলার গাড়ি (লুনার রোভিং ভেহিকল) ব্যবহার হয়। ডেভিড স্কট ও জেমস আরউইন হ্যাডলি রিল অঞ্চলে প্রায় ২৮ কিলোমিটার ঘুরেছিলেন এবং প্রায় ৭৭ কেজি নমুনা এনেছিলেন। শেষে স্কট একটা হাতুড়ি আর একটা পালক একসঙ্গে ছেড়ে দেন; বাতাস নেই বলে দুটোই একসঙ্গে মাটিতে পড়ে। গাড়িটি চাঁদেই পার্ক করা অবস্থায় রেখে আসা হয়।"
+            }
+        },
+        "fact": {
+            "en": "Apollo 15’s mirror array has 300 mirrors, three times more than Apollo 11’s, so it gives the strongest signal.",
+            "bn": "অ্যাপোলো ১৫-এর আয়না-সারিতে ৩০০টি আয়না আছে, যা অ্যাপোলো ১১-এর তিন গুণ। তাই এর সংকেত সবচেয়ে জোরালো।"
+        },
+        "sources": [
+            "https://nssdc.gsfc.nasa.gov/planetary/lunar/apolloland.html",
+            "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html",
+            "https://eos.org/features/seeing-the-light",
+            "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+        ],
+        "main": true
+    },
+    {
+        "id": "apollo16",
+        "body": "moon",
+        "lat": -8.973,
+        "lon": 15.501,
+        "year": 1972,
+        "lastContact": null,
+        "name": {
+            "en": "Apollo 16",
+            "bn": "অ্যাপোলো ১৬"
+        },
+        "place": {
+            "en": "Descartes Highlands",
+            "bn": "দেকার্ত উচ্চভূমি"
+        },
+        "story": {
+            "en": {
+                "young": "In 1972, astronaut Charles Duke left a photo of his family on me! 📷 I’m in the Moon’s mountains, called the highlands. The astronauts drove a Moon car here, and it’s still parked.",
+                "older": "Apollo 16 (April 1972) was the first mission to land in the lunar highlands. John Young and Charles Duke drove the rover, collected almost 96 kg of rocks, and left the rover parked afterwards. Duke also left a photo of his family on the surface, which sunlight has probably faded by now."
+            },
+            "bn": {
+                "young": "১৯৭২ সালে মহাকাশচারী চার্লস ডিউক আমার ওপর তাঁর পরিবারের একটা ছবি রেখে গিয়েছিলেন! 📷 আমি চাঁদের পাহাড়ি এলাকায়, যাকে বলে উচ্চভূমি। মহাকাশচারীরা এখানে একটা চাঁদের গাড়ি চালিয়েছিলেন, সেটা এখনও পার্ক করা।",
+                "older": "অ্যাপোলো ১৬ (১৯৭২ সালের এপ্রিল) ছিল চাঁদের উচ্চভূমিতে নামা প্রথম অভিযান। জন ইয়াং ও চার্লস ডিউক গাড়ি চালিয়ে প্রায় ৯৬ কেজি পাথর সংগ্রহ করেন, তারপর গাড়িটি সেখানেই রেখে আসেন। ডিউক নিজের পরিবারের একটি ছবিও রেখে গিয়েছিলেন; সূর্যের আলোয় সেটি এতদিনে সম্ভবত ফিকে হয়ে গেছে।"
+            }
+        },
+        "fact": {
+            "en": "The Moon’s bright highlands are older than the dark plains called “seas”.",
+            "bn": "চাঁদের উজ্জ্বল উচ্চভূমি কালো সমভূমি, অর্থাৎ ‘সাগর’-এর চেয়ে পুরোনো।"
+        },
+        "sources": [
+            "https://nssdc.gsfc.nasa.gov/planetary/lunar/apolloland.html",
+            "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html",
+            "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+        ],
+        "main": false
+    },
+    {
+        "id": "apollo17",
+        "body": "moon",
+        "lat": 20.191,
+        "lon": 30.772,
+        "year": 1972,
+        "lastContact": null,
+        "name": {
+            "en": "Apollo 17",
+            "bn": "অ্যাপোলো ১৭"
+        },
+        "place": {
+            "en": "Taurus–Littrow Valley",
+            "bn": "টরাস–লিত্রো উপত্যকা"
+        },
+        "story": {
+            "en": {
+                "young": "I’m the last place people have visited on the Moon, so far! In 1972, Gene Cernan and Harrison Schmitt walked here and left a plaque wishing for peace. Maybe someone reading this will go next! 🌙",
+                "older": "Apollo 17 (December 1972) is the most recent time humans have landed on the Moon. Harrison Schmitt, the only professional geologist to walk there, spotted orange soil that turned out to be tiny glass beads from ancient volcanic eruptions. The crew brought home a record haul of samples and left a plaque wishing for peace."
+            },
+            "bn": {
+                "young": "আমি চাঁদের সেই জায়গা, যেখানে মানুষ সবশেষে গিয়েছিল, এখন পর্যন্ত! ১৯৭২ সালে জিন সের্নান আর হ্যারিসন শ্মিট এখানে হেঁটেছিলেন এবং শান্তির কামনা লেখা একটি ফলক রেখে গিয়েছিলেন। হয়তো যে এটা পড়ছে, সে-ই পরের জন হবে! 🌙",
+                "older": "অ্যাপোলো ১৭ (১৯৭২ সালের ডিসেম্বর) এখন পর্যন্ত চাঁদে মানুষের সর্বশেষ অবতরণ। হ্যারিসন শ্মিট, চাঁদে হাঁটা একমাত্র পেশাদার ভূতাত্ত্বিক, কমলা রঙের মাটি দেখতে পান; পরে জানা যায়, সেটা আগ্নেয়গিরির ছোট ছোট কাচের দানা। দলটি রেকর্ড পরিমাণ নমুনা পৃথিবীতে আনে এবং শান্তি কামনা করে একটি ফলক রেখে আসে।"
+            }
+        },
+        "fact": {
+            "en": "Apollo 17 brought home the most Moon rock of any mission: about 110 kg.",
+            "bn": "চাঁদ থেকে সবচেয়ে বেশি পাথর এনেছিল অ্যাপোলো ১৭: প্রায় ১১০ কেজি।"
+        },
+        "sources": [
+            "https://nssdc.gsfc.nasa.gov/planetary/lunar/apolloland.html",
+            "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html"
+        ],
+        "main": false
+    },
+    {
+        "id": "opportunity",
+        "body": "mars",
+        "lat": -1.95,
+        "lon": -5.53,
+        "year": 2004,
+        "lastContact": 2018,
+        "name": {
+            "en": "Opportunity",
+            "bn": "অপরচুনিটি"
+        },
+        "place": {
+            "en": "Meridiani Planum",
+            "bn": "মেরিডিয়ানি সমভূমি"
+        },
+        "story": {
+            "en": {
+                "young": "I’m Opportunity, but my friends call me Oppy! 🤖 I was built to work for 90 Mars days, but I worked for almost 15 years. I drove farther than a marathon and found clues that Mars once had water. One big dust storm hid the Sun, and my battery ran low. I’m resting on Mars now.",
+                "older": "Opportunity landed in Eagle Crater in January 2004. It was planned to work for 90 Mars days (sols) and worked for more than 5,000. It found rocks showing that water once flowed there, and it drove 45 km (28 miles), farther than a marathon. In 2018 a planet-wide dust storm blocked its sunlight. Its last signal came on June 10, 2018, from Perseverance Valley, and NASA ended the mission in February 2019."
+            },
+            "bn": {
+                "young": "আমি অপরচুনিটি, তবে বন্ধুরা আমাকে ‘অপি’ ডাকে! 🤖 আমাকে বানানো হয়েছিল মঙ্গলের ৯০ দিন কাজ করার জন্য, কিন্তু আমি কাজ করেছি প্রায় ১৫ বছর। আমি ম্যারাথনের চেয়েও বেশি পথ ছুটেছি, আর খুঁজে পেয়েছি মঙ্গলে একসময় পানি থাকার চিহ্ন। এক বিশাল ধুলোঝড় সূর্য ঢেকে দিল, আর আমার ব্যাটারি ফুরিয়ে এল। এখন আমি মঙ্গলেই বিশ্রাম নিচ্ছি।",
+                "older": "অপরচুনিটি ২০০৪ সালের জানুয়ারিতে ঈগল ক্রেটারে নামে। পরিকল্পনা ছিল ৯০ সাল (মঙ্গলের দিন) কাজ করার; সে কাজ করেছে ৫,০০০-এরও বেশি সাল। সে এমন পাথর খুঁজে পায়, যা দেখায় সেখানে একসময় পানি বইত। সে প্রায় ৪৫ কিলোমিটার (২৮ মাইল) পথ চলেছে, যা ম্যারাথনের চেয়েও বেশি। ২০১৮ সালে গ্রহজুড়ে ধুলোঝড়ে তার সৌরপ্যানেলে আলো পৌঁছাতে পারেনি। শেষ সংকেত আসে ২০১৮ সালের ১০ জুন, পারসিভারেন্স ভ্যালি থেকে; ২০১৯ সালের ফেব্রুয়ারিতে নাসা মিশন শেষ ঘোষণা করে।"
+            }
+        },
+        "fact": {
+            "en": "The famous line “My battery is low and it’s getting dark” was a poetic translation. The real last signal was numbers about power and dust.",
+            "bn": "“আমার ব্যাটারি প্রায় শেষ, আর চারপাশ অন্ধকার হয়ে আসছে” লাইনটি ছিল কাব্যিক অনুবাদ। আসল শেষ সংকেত ছিল বিদ্যুৎ আর ধুলো নিয়ে কিছু সংখ্যা।"
+        },
+        "sources": [
+            "https://www.jpl.nasa.gov/images/rovers-landing-hardware-at-eagle-crater-mars",
+            "https://snopes.com/fact-check/opportunity-rovers-final-words/",
+            "https://www.wral.com/amp/my-battery-is-low-and-it-s-getting-dark-end-of-opportunity-mission-a-loss-for-team/18197530/"
+        ],
+        "main": true
+    },
+    {
+        "id": "spirit",
+        "body": "mars",
+        "lat": -14.57,
+        "lon": 175.48,
+        "year": 2004,
+        "lastContact": 2010,
+        "name": {
+            "en": "Spirit",
+            "bn": "স্পিরিট"
+        },
+        "place": {
+            "en": "Gusev Crater",
+            "bn": "গুসেভ ক্রেটার"
+        },
+        "story": {
+            "en": {
+                "young": "I’m Spirit, Oppy’s twin! 🤖 I landed in a huge crater called Gusev in 2004 and found clues that water once shaped the rocks. In 2009 I got stuck in soft sand. Winter came, my solar panels could not catch enough sunlight, and I fell asleep in 2010.",
+                "older": "Spirit landed in Gusev Crater in January 2004, about three weeks before its twin Opportunity. It climbed hills and found bright soil rich in silica, a mineral that often forms where hot water or steam is present. In 2009 it became stuck in soft sand and could not tilt its solar panels toward the Sun in winter. Its last contact was on March 22, 2010, and NASA ended recovery efforts in 2011."
+            },
+            "bn": {
+                "young": "আমি স্পিরিট, অপির যমজ! 🤖 ২০০৪ সালে আমি গুসেভ নামের এক বিশাল গর্তে নেমেছিলাম, আর খুঁজে পেয়েছিলাম পাথরে পানির ছাপ থাকার সূত্র। ২০০৯ সালে আমি নরম বালুতে আটকে গেলাম। শীত এল, আমার সৌরপ্যানেল যথেষ্ট আলো পেল না, আর ২০১০ সালে আমি ঘুমিয়ে পড়লাম।",
+                "older": "স্পিরিট ২০০৪ সালের জানুয়ারিতে গুসেভ ক্রেটারে নামে, তার যমজ অপরচুনিটির প্রায় তিন সপ্তাহ আগে। সে পাহাড়ে উঠেছিল এবং সিলিকায় সমৃদ্ধ উজ্জ্বল মাটি খুঁজে পায়; যেখানে গরম পানি বা বাষ্প থাকে, সেখানে প্রায়ই এই খনিজ তৈরি হয়। ২০০৯ সালে সে নরম বালুতে আটকে যায়, ফলে শীতে সৌরপ্যানেল সূর্যের দিকে কাত করতে পারেনি। শেষ যোগাযোগ হয় ২০১০ সালের ২২ মার্চ; ২০১১ সালে নাসা তাকে ফিরিয়ে আনার চেষ্টা বন্ধ করে।"
+            }
+        },
+        "fact": {
+            "en": "Spirit worked for 2,210 sols, many times longer than the 90 planned.",
+            "bn": "স্পিরিট ২,২১০ সাল কাজ করেছে, পরিকল্পনার ৯০ সালের চেয়ে অনেক বেশি।"
+        },
+        "sources": [
+            "https://ode.rsl.wustl.edu/mars/pagehelp/Content/Missions_Instruments/Landing_Sites.htm",
+            "https://ipfs.ssi.eecc.de/ipns/en.wikipedia-on-ipfs.org/wiki/List_of_artificial_objects_on_Mars"
+        ],
+        "main": false
+    },
+    {
+        "id": "pathfinder",
+        "body": "mars",
+        "lat": 19.13,
+        "lon": -33.5,
+        "year": 1997,
+        "lastContact": 1997,
+        "name": {
+            "en": "Pathfinder & Sojourner",
+            "bn": "পাথফাইন্ডার ও সোজার্নার"
+        },
+        "place": {
+            "en": "Ares Vallis",
+            "bn": "আরেস ভ্যালিস"
+        },
+        "story": {
+            "en": {
+                "young": "Hello! I’m Sojourner, the very first rover to drive on Mars! 🚙 My name came from a contest for students. I’m about as big as a microwave oven. I was planned to work for 7 days, but I worked for 83!",
+                "older": "On July 4, 1997, Mars Pathfinder bounced to a stop on airbags in Ares Vallis, an ancient flood channel. The next day the rover Sojourner rolled out. It was planned to work for 7 sols and worked for 83. It drove about 100 m, never more than about 12 m from the lander, and used an X-ray instrument to study rocks. The lander’s last successful contact with Earth was on September 27, 1997, and engineers suspect its battery wore out."
+            },
+            "bn": {
+                "young": "হ্যালো! আমি সোজার্নার, মঙ্গলে চলা প্রথম রোভার! 🚙 আমার নাম এসেছিল ছাত্রছাত্রীদের এক প্রতিযোগিতা থেকে। আমি প্রায় একটা মাইক্রোওয়েভ ওভেনের মতো বড়। আমার কাজ করার কথা ছিল ৭ দিন, কিন্তু আমি কাজ করেছি ৮৩ দিন!",
+                "older": "১৯৯৭ সালের ৪ জুলাই মার্স পাথফাইন্ডার আরেস ভ্যালিসে নামে; এটি এক প্রাচীন বন্যার খাত। এয়ারব্যাগের ওপর লাফিয়ে লাফিয়ে সে থামে। পরদিন সোজার্নার রোভার বেরিয়ে আসে। তার কাজ করার কথা ছিল ৭ সাল, কিন্তু সে কাজ করেছে ৮৩ সাল। সে প্রায় ১০০ মিটার পথ চলেছিল, ল্যান্ডার থেকে কখনও ১২ মিটারের বেশি দূরে যায়নি, আর এক্স-রে যন্ত্র দিয়ে পাথর পরীক্ষা করেছিল। ল্যান্ডারের সঙ্গে পৃথিবীর শেষ সফল যোগাযোগ হয় ১৯৯৭ সালের ২৭ সেপ্টেম্বর; প্রকৌশলীদের ধারণা, তার ব্যাটারি ফুরিয়ে গিয়েছিল।"
+            }
+        },
+        "fact": {
+            "en": "Sojourner’s six-wheel rocker-bogie suspension is still used on NASA’s Mars rovers today.",
+            "bn": "সোজার্নারের ছয় চাকার রকার-বগি সাসপেনশন আজও নাসার মঙ্গল-রোভারে ব্যবহার হয়।"
+        },
+        "sources": [
+            "https://nssdc.gsfc.nasa.gov/planetary/marsland.html",
+            "https://lightsinthedark.com/2012/07/22/remembering-sojourner-the-first-mars-rover",
+            "https://en.wikipedia.org/wiki/Sojourner_(rover)"
+        ],
+        "main": true
+    },
+    {
+        "id": "viking1",
+        "body": "mars",
+        "lat": 22.48,
+        "lon": -49.97,
+        "year": 1976,
+        "lastContact": 1982,
+        "name": {
+            "en": "Viking 1",
+            "bn": "ভাইকিং ১"
+        },
+        "place": {
+            "en": "Chryse Planitia",
+            "bn": "ক্রাইসে সমভূমি"
+        },
+        "story": {
+            "en": {
+                "young": "I’m Viking 1! 🛰️ In 1976 I landed on Mars and sent back the first clear photos from its surface. I scooped up soil to look for tiny living things. I kept working for more than six years!",
+                "older": "Viking 1 landed in Chryse Planitia on July 20, 1976, and Viking 2 followed in September. Its cameras returned the first clear pictures from the surface of Mars, and its experiments tested the soil for signs of microbial life. The results did not give clear evidence of life. Viking 1 worked for more than six years, and its last transmission came on November 11, 1982."
+            },
+            "bn": {
+                "young": "আমি ভাইকিং ১! 🛰️ ১৯৭৬ সালে আমি মঙ্গলে নেমেছিলাম এবং সেখানকার মাটি থেকে তোলা প্রথম পরিষ্কার ছবি পাঠিয়েছিলাম। ছোট্ট প্রাণের খোঁজে আমি মাটি তুলে পরীক্ষা করেছিলাম। আমি ছয় বছরেরও বেশি কাজ করেছি!",
+                "older": "ভাইকিং ১ ১৯৭৬ সালের ২০ জুলাই ক্রাইসে সমভূমিতে নামে; সেপ্টেম্বরে নামে ভাইকিং ২। এর ক্যামেরা মঙ্গলের মাটি থেকে তোলা প্রথম পরিষ্কার ছবি পাঠায়। এর পরীক্ষায় মাটিতে অণুজীবের চিহ্ন খোঁজা হয়েছিল; ফল জীবনের স্পষ্ট প্রমাণ দেয়নি। ভাইকিং ১ ছয় বছরেরও বেশি কাজ করেছে, শেষ সংকেত পাঠায় ১৯৮২ সালের ১১ নভেম্বর।"
+            }
+        },
+        "fact": {
+            "en": "Viking 1 and Viking 2 landed on Mars just six weeks apart in 1976.",
+            "bn": "১৯৭৬ সালে ভাইকিং ১ আর ভাইকিং ২ মঙ্গলে নেমেছিল মাত্র ছয় সপ্তাহের ব্যবধানে।"
+        },
+        "sources": [
+            "https://nssdc.gsfc.nasa.gov/planetary/marsland.html",
+            "https://orbitcodex.com/landing-sites/chryse-planitia",
+            "https://ipfs.ssi.eecc.de/ipns/en.wikipedia-on-ipfs.org/wiki/List_of_artificial_objects_on_Mars"
+        ],
+        "main": true
+    }
 ]
