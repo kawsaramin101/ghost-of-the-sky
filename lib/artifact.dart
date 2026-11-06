@@ -7,7 +7,7 @@ class Artifact {
   Artifact({
     required this.id, required this.body, required this.lat, required this.lon,
     required this.year, this.lastContact, required this.name, required this.place,
-    required this.story, required this.fact,
+    required this.story, required this.fact, this.isMain = false,
   });
 
   final String id, body; // body: 'moon' | 'mars'
@@ -16,6 +16,10 @@ class Artifact {
   final int? lastContact;
   final Map<String, String> name, place, fact; // keyed by 'en' / 'bn'
   final Map<String, Map<String, String>> story; // lang -> tier ('young'/'older') -> text
+
+
+  final bool isMain;
+
 
   factory Artifact.fromJson(Map<String, dynamic> j) => Artifact(
         id: j['id'] as String,
@@ -28,6 +32,7 @@ class Artifact {
         place: Map<String, String>.from(j['place'] as Map),
         fact: Map<String, String>.from(j['fact'] as Map),
         story: (j['story'] as Map).map((k, v) => MapEntry(k as String, Map<String, String>.from(v as Map))),
+        isMain: (j['main'] as bool?) ?? false,
       );
 
   String nameFor(AppState s) => name[s.lang.name]!;

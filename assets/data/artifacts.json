@@ -1,5 +1,40 @@
 [
  {
+  "id": "surveyor1",
+  "body": "moon",
+  "lat": -2.474,
+  "lon": -43.338,
+  "year": 1966,
+  "lastContact": 1967,
+  "name": {
+   "en": "Surveyor 1",
+   "bn": "সার্ভেয়ার ১"
+  },
+  "place": {
+   "en": "Ocean of Storms",
+   "bn": "ঝড়ের মহাসাগর"
+  },
+  "story": {
+   "en": {
+    "young": "I’m Surveyor 1! 🛰️ In 1966 I was the first NASA robot to land softly on the Moon, and I did it on my very first try! I sent back thousands of photos that showed the Moon’s ground was strong enough to stand on. In 1967 I went quiet, and I’ve been resting here ever since.",
+    "older": "Surveyor 1 launched on May 30, 1966, and landed in the Ocean of Storms on June 2. It was the first U.S. soft landing on the Moon, a few months after the Soviet Luna 9, and it worked on the first try. It sent back more than 11,000 pictures and showed that the surface could support a spacecraft, which helped NASA plan the Apollo landings. Its last contact was in January 1967."
+   },
+   "bn": {
+    "young": "আমি সার্ভেয়ার ১! 🛰️ ১৯৬৬ সালে আমি ছিলাম চাঁদে আস্তে করে নামা নাসার প্রথম রোবট, আর প্রথমবারেই সফল হয়েছিলাম! আমি হাজার হাজার ছবি পাঠিয়েছিলাম, যাতে দেখা গেল চাঁদের মাটি দাঁড়ানোর মতো শক্ত। ১৯৬৭ সালে আমি চুপ হয়ে গেলাম, আর তখন থেকে এখানেই বিশ্রাম নিচ্ছি।",
+    "older": "সার্ভেয়ার ১ উৎক্ষেপণ হয় ১৯৬৬ সালের ৩০ মে এবং ২ জুন সে ঝড়ের মহাসাগরে নামে। সোভিয়েত লুনা ৯-এর কয়েক মাস পর এটি ছিল চাঁদে যুক্তরাষ্ট্রের প্রথম নরম অবতরণ, আর প্রথম চেষ্টাতেই সে সফল হয়। সে ১১,০০০-এরও বেশি ছবি পাঠায় এবং দেখায় যে চাঁদের মাটি মহাকাশযানের ভার সইতে পারে; এতে নাসার অ্যাপোলো অবতরণের পরিকল্পনা সহজ হয়। তার শেষ যোগাযোগ হয় ১৯৬৭ সালের জানুয়ারিতে।"
+   }
+  },
+  "fact": {
+   "en": "Surveyor 1 landed about three years before Apollo 11, as a robot scout for the astronauts.",
+   "bn": "সার্ভেয়ার ১ চাঁদে নেমেছিল অ্যাপোলো ১১-এর প্রায় তিন বছর আগে, মহাকাশচারীদের জন্য এক রোবট-স্কাউট হিসেবে।"
+  },
+  "sources": [
+   "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-045A",
+   "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
+  ],
+  "main": true
+ },
+ {
   "id": "apollo11",
   "body": "moon",
   "lat": 0.674,
@@ -33,7 +68,8 @@
    "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html",
    "https://eos.org/features/seeing-the-light",
    "https://earth.gsfc.nasa.gov/geo/projects/sgp/updates/reflectors-placed-moon-apollo-11-astronauts-50-years-ago-continue-provide"
-  ]
+  ],
+  "main": true
  },
  {
   "id": "apollo12",
@@ -67,7 +103,8 @@
   "sources": [
    "https://nssdc.gsfc.nasa.gov/planetary/lunar/apolloland.html",
    "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html"
-  ]
+  ],
+  "main": false
  },
  {
   "id": "apollo14",
@@ -102,7 +139,8 @@
    "https://nssdc.gsfc.nasa.gov/planetary/lunar/apolloland.html",
    "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html",
    "https://eos.org/features/seeing-the-light"
-  ]
+  ],
+  "main": false
  },
  {
   "id": "apollo15",
@@ -138,7 +176,8 @@
    "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html",
    "https://eos.org/features/seeing-the-light",
    "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
-  ]
+  ],
+  "main": true
  },
  {
   "id": "apollo16",
@@ -173,7 +212,8 @@
    "https://nssdc.gsfc.nasa.gov/planetary/lunar/apolloland.html",
    "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html",
    "https://www.lroc.asu.edu/data/support/downloads/2016_LROC_Coordinates_of_Human_Features.pdf"
-  ]
+  ],
+  "main": false
  },
  {
   "id": "apollo17",
@@ -207,7 +247,8 @@
   "sources": [
    "https://nssdc.gsfc.nasa.gov/planetary/lunar/apolloland.html",
    "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html"
-  ]
+  ],
+  "main": false
  },
  {
   "id": "opportunity",
@@ -242,7 +283,8 @@
    "https://www.jpl.nasa.gov/images/rovers-landing-hardware-at-eagle-crater-mars",
    "https://snopes.com/fact-check/opportunity-rovers-final-words/",
    "https://www.wral.com/amp/my-battery-is-low-and-it-s-getting-dark-end-of-opportunity-mission-a-loss-for-team/18197530/"
-  ]
+  ],
+  "main": true
  },
  {
   "id": "spirit",
@@ -276,7 +318,8 @@
   "sources": [
    "https://ode.rsl.wustl.edu/mars/pagehelp/Content/Missions_Instruments/Landing_Sites.htm",
    "https://ipfs.ssi.eecc.de/ipns/en.wikipedia-on-ipfs.org/wiki/List_of_artificial_objects_on_Mars"
-  ]
+  ],
+  "main": false
  },
  {
   "id": "pathfinder",
@@ -311,7 +354,8 @@
    "https://nssdc.gsfc.nasa.gov/planetary/marsland.html",
    "https://lightsinthedark.com/2012/07/22/remembering-sojourner-the-first-mars-rover",
    "https://en.wikipedia.org/wiki/Sojourner_(rover)"
-  ]
+  ],
+  "main": true
  },
  {
   "id": "viking1",
@@ -346,6 +390,7 @@
    "https://nssdc.gsfc.nasa.gov/planetary/marsland.html",
    "https://orbitcodex.com/landing-sites/chryse-planitia",
    "https://ipfs.ssi.eecc.de/ipns/en.wikipedia-on-ipfs.org/wiki/List_of_artificial_objects_on_Mars"
-  ]
+  ],
+  "main": true
  }
 ]

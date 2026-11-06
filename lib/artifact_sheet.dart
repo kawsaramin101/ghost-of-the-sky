@@ -6,8 +6,9 @@ import 'strings.dart';
 
 /// Bottom sheet that tells the artifact's story in the user's language and age tier.
 class ArtifactSheet extends StatelessWidget {
-  const ArtifactSheet({super.key, required this.artifact});
+   const ArtifactSheet({super.key, required this.artifact, this.onNext});
   final Artifact artifact;
+  final VoidCallback? onNext;
 
   Widget _chip(String text, Color c) => Container(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
@@ -65,7 +66,18 @@ class ArtifactSheet extends StatelessWidget {
               ]),
             ),
             const SizedBox(height: 22),
-            ChunkyButton(label: tr(s, 'close'), color: GC.violet, dark: GC.violetDark, onTap: () => Navigator.of(context).pop()),
+            Row(children: [
+              Expanded(child: ChunkyButton(label: tr(s, 'close'), color: GC.violet, dark: GC.violetDark, onTap: () => Navigator.of(context).pop())),
+              if (onNext != null) ...[
+                const SizedBox(width: 12),
+                Expanded(
+                  child: ChunkyButton(
+                    label: tr(s, 'next'), icon: Icons.arrow_forward_rounded, color: GC.orange, dark: GC.orangeDark,
+                    onTap: () { onNext!(); Navigator.of(context).pop(); },
+                  ),
+                ),
+              ],
+            ]),
           ]),
         ),
       ),
